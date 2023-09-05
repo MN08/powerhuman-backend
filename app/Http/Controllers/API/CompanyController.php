@@ -20,18 +20,18 @@ class CompanyController extends Controller
         $name = $request->input('name');
         $limit = $request->input('limit', 10);
 
+        $companyQuery = Company::with(['users'])->whereHas('users', function ($query) {
+            $query->where('user_id', Auth::id());
+        });
+
         if ($id) {
-            $company = Company::whereHas('users', function ($query) {
-                $query->where('user_id', Auth::id());
-            })->with(['users'])->find($id);
+            $company = $companyQuery->find($id);
             if ($company) {
                 return ResponseFormatter::success($company, 'Company Founded');
             }
             return ResponseFormatter::error('Company Not Found', 404);
         }
-        $companies = Company::with(['users'])->whereHas('users', function ($query) {
-            $query->where('user_id', Auth::id());
-        });
+        $companies = $companyQuery;
         if ($name) {
             $companies->where('name', 'like', '%' . $name . '%');
         }
