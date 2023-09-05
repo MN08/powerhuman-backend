@@ -55,15 +55,10 @@ class TeamController extends Controller
                 throw new Exception('Team Not Created');
             }
 
-            // $user = User::find(Auth::id());
-            // $user->companies()->attach($company->id);
-
-            $team->load('users');
 
             return ResponseFormatter::success($team, 'Team Created Successfully');
         } catch (Exception $err) {
             return ResponseFormatter::error($err->getMessage(), 500);
-            //throw $th;
         }
     }
 
@@ -83,9 +78,13 @@ class TeamController extends Controller
                 'icon' => $path,
             ]);
 
-            return ResponseFormatter::success($team, 'Update Company Success');
+            return ResponseFormatter::success($team, 'Update Team Success');
         } catch (Exception $err) {
             return ResponseFormatter::error($err->getMessage(), 500);
         }
+    }
+
+    public function delete()
+    {
     }
 }
