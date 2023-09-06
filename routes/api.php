@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CompanyController;
+use App\Http\Controllers\API\EmployeeController;
 use App\Http\Controllers\API\ResponsibilityController;
 use App\Http\Controllers\API\RoleController;
 use App\Http\Controllers\API\TeamController;
@@ -53,10 +54,18 @@ Route::prefix('role')->middleware(['auth:sanctum'])->name('role.')->group(functi
     Route::delete('{id}', [RoleController::class, 'delete'])->name('delete');
 });
 
-//responsibility API Route
+//Responsibility API Route
 Route::prefix('responsibility')->middleware(['auth:sanctum'])->name('responsibility.')->group(function () {
     Route::get('', [ResponsibilityController::class, 'index'])->name('index');
     Route::post('', [ResponsibilityController::class, 'create'])->name('create');
     Route::post('update/{id}', [ResponsibilityController::class, 'update'])->name('update');
     Route::delete('{id}', [ResponsibilityController::class, 'delete'])->name('delete');
+});
+
+//Employee API Route
+Route::prefix('employee')->middleware(['auth:sanctum'])->name('employee.')->group(function () {
+    Route::get('', [EmployeeController::class, 'index'])->name('index');
+    Route::post('', [EmployeeController::class, 'create'])->name('create');
+    Route::post('update/{id}', [EmployeeController::class, 'update'])->name('update');
+    Route::delete('{id}', [EmployeeController::class, 'delete'])->name('delete');
 });
