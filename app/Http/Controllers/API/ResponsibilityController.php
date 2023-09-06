@@ -31,6 +31,7 @@ class ResponsibilityController extends Controller
         if ($name) {
             $responsibilities->where('name', 'like', '%' . $name . '%');
         }
+
         return ResponseFormatter::success(
             $responsibilities->paginate($limit),
             'Responsibility Found',
