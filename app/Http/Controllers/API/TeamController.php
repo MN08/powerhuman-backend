@@ -19,24 +19,22 @@ class TeamController extends Controller
         $name = $request->input('name');
         $limit = $request->input('limit', 10);
 
+        $teamQuery = Team::query();
+
         if ($id) {
-            $team = Team::whereHas('users', function ($query) {
-                $query->where('user_id', Auth::id());
-            })->with(['users'])->find($id);
+            $team = $teamQuery->find($id);
             if ($team) {
                 return ResponseFormatter::success($team, 'Team Founded');
             }
-            return ResponseFormatter::error('Company Not Found', 404);
+            return ResponseFormatter::error('Team Not Found', 404);
         }
-        $teams = Team::with(['users'])->whereHas('users', function ($query) {
-            $query->where('user_id', Auth::id());
-        });
+        $teams = $teamQuery->where('company_id', $request->company_id);
         if ($name) {
             $teams->where('name', 'like', '%' . $name . '%');
         }
         return ResponseFormatter::success(
             $teams->paginate($limit),
-            'Company Found',
+            'Team Found',
         );
     }
 
@@ -44,11 +42,12 @@ class TeamController extends Controller
     {
         try {
             if ($request->hasFile('icon')) {
-                $path = $request->file('icon')->store('public/icon');
+                $path = $request->file('icon')->store('public/icons');
             }
             $team = Team::create([
                 'name' => $request->name,
                 'icon' => $path,
+                'company_id' => $request->company_id,
             ]);
 
             if (!$team) {
@@ -71,11 +70,12 @@ class TeamController extends Controller
             }
 
             if ($request->hasFile('icon')) {
-                $path = $request->file('icon')->store('public/icon');
+                $path = $request->file('icon')->store('public/icons');
             }
             $team->update([
                 'name' => $request->name,
                 'icon' => $path,
+                'company_id' => $request->company_id,
             ]);
 
             return ResponseFormatter::success($team, 'Update Team Success');
@@ -84,7 +84,17 @@ class TeamController extends Controller
         }
     }
 
-    public function delete()
+    public function delete($id)
     {
+        try {
+            $team = Team::find($id);
+            if (!$team) {
+                throw new Exception('Team Not Found');
+            }
+            $team->delete();
+            return ResponseFormatter::success($team, 'Delete Team Success');
+        } catch (Exception $err) {
+            return ResponseFormatter::error($err->getMessage());
+        }
     }
 }
