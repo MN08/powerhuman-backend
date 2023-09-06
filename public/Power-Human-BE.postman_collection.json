@@ -1,0 +1,4425 @@
+{
+	"info": {
+		"_postman_id": "dfe8ce78-248d-4333-844e-a8203ca90f62",
+		"name": "Power-Human-BE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14174662"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "nurhuda@joyalab.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password08",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/login",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "nurhuda@joyalab.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Password08",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/login",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 15:09:37 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 15:09:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Login Success\"\n    },\n    \"result\": {\n        \"access_token\": \"4|laravel_sanctum_TnCR6ApH0CUU79b5ashq5ZuCiqk4io1kVNt1nG6Hefcadade\",\n        \"token_type\": \"Bearer\",\n        \"user\": {\n            \"id\": 18,\n            \"name\": \"nurhuda\",\n            \"email\": \"nurhuda@joyalab.com\",\n            \"email_verified_at\": null,\n            \"two_factor_confirmed_at\": null,\n            \"current_team_id\": null,\n            \"profile_photo_path\": null,\n            \"created_at\": \"2023-09-05T15:08:13.000000Z\",\n            \"updated_at\": \"2023-09-05T15:08:13.000000Z\",\n            \"profile_photo_url\": \"https://ui-avatars.com/api/?name=n&color=7F9CF5&background=EBF4FF\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Login Failed Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "nurhuda@joyalab.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Password0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/login",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 15:10:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 15:10:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 401,\n        \"status\": \"error\",\n        \"message\": \"Unauthorized\"\n    },\n    \"result\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "nurhuda",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "nurhuda@joyalab.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password08",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/register",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Nurhuda",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "nurhuda@joyalab.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Password08",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/register",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 14:43:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 14:43:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Regiser Success\"\n    },\n    \"result\": {\n        \"access_token\": \"1|laravel_sanctum_k78tDzfzsQRvhrAABeBM6rxhzH8rBmBvBtGvEubq61bae5b5\",\n        \"token_type\": \"Bearer\",\n        \"user\": {\n            \"name\": \"Nurhuda\",\n            \"email\": \"nurhuda@joyalab.com\",\n            \"updated_at\": \"2023-09-05T14:43:16.000000Z\",\n            \"created_at\": \"2023-09-05T14:43:16.000000Z\",\n            \"id\": 16,\n            \"profile_photo_url\": \"https://ui-avatars.com/api/?name=N&color=7F9CF5&background=EBF4FF\"\n        }\n    }\n}"
+						},
+						{
+							"name": "Error Register Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Nurhuda",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "nurhuda@joyalab.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Password08",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/register",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 14:50:12 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 14:50:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 400,\n        \"status\": \"error\",\n        \"message\": \"The email has already been taken.\"\n    },\n    \"result\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|laravel_sanctum_FYhzb4ZB8GQfz8R7GAvfRryjOmPny9lmcDZ1zuSXa1f20781",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/logout",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/logout",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 15:12:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 15:12:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Logout Success\"\n    },\n    \"result\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Fetch User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/user",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Fetch User Success Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/user",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 15:16:38 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 15:16:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Fetch User Success\"\n    },\n    \"result\": {\n        \"id\": 18,\n        \"name\": \"nurhuda\",\n        \"email\": \"nurhuda@joyalab.com\",\n        \"email_verified_at\": null,\n        \"two_factor_confirmed_at\": null,\n        \"current_team_id\": null,\n        \"profile_photo_path\": null,\n        \"created_at\": \"2023-09-05T15:08:13.000000Z\",\n        \"updated_at\": \"2023-09-05T15:08:13.000000Z\",\n        \"profile_photo_url\": \"https://ui-avatars.com/api/?name=n&color=7F9CF5&background=EBF4FF\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Get Company By User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/company?id=17",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"company"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "17"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Company By User Success Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{domain}}/company",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 17:12:04 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 17:12:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Company Found\"\n    },\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 17,\n                \"name\": \"PT Muda Jaya Digital\",\n                \"logo\": \"public/logo/ZdSyGhJCqBRp53tYillszm7qcz4JahDRYooQQl33.svg\",\n                \"created_at\": \"2023-09-05T09:33:30.000000Z\",\n                \"updated_at\": \"2023-09-05T09:33:30.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 18,\n                \"name\": \"RAPO\",\n                \"logo\": \"public/logo/LesJDac0kXkPx2XwvrTCUoT8K8E0X0cwNE4Zp22c.svg\",\n                \"created_at\": \"2023-09-05T09:36:09.000000Z\",\n                \"updated_at\": \"2023-09-05T17:08:36.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 19,\n                \"name\": \"Joyalab\",\n                \"logo\": \"public/logo/E8fBHcaoGA5EaV5Tp5JVkuBjjOoSvHhMZHX0r9SL.svg\",\n                \"created_at\": \"2023-09-05T09:49:44.000000Z\",\n                \"updated_at\": \"2023-09-05T09:49:44.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/company?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/company?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/company?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/company\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 3,\n        \"total\": 3\n    }\n}"
+						},
+						{
+							"name": "Get Company id By User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{domain}}/company?id=17",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"company"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "17"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 17:17:42 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 17:17:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Company Founded\"\n    },\n    \"result\": {\n        \"id\": 17,\n        \"name\": \"PT Muda Jaya Digital\",\n        \"logo\": \"public/logo/ZdSyGhJCqBRp53tYillszm7qcz4JahDRYooQQl33.svg\",\n        \"created_at\": \"2023-09-05T09:33:30.000000Z\",\n        \"updated_at\": \"2023-09-05T09:33:30.000000Z\",\n        \"deleted_at\": null,\n        \"users\": [\n            {\n                \"id\": 18,\n                \"name\": \"nurhuda\",\n                \"email\": \"nurhuda@joyalab.com\",\n                \"email_verified_at\": null,\n                \"two_factor_confirmed_at\": null,\n                \"current_team_id\": null,\n                \"profile_photo_path\": null,\n                \"created_at\": \"2023-09-05T08:08:13.000000Z\",\n                \"updated_at\": \"2023-09-05T08:08:13.000000Z\",\n                \"profile_photo_url\": \"https://ui-avatars.com/api/?name=n&color=7F9CF5&background=EBF4FF\",\n                \"pivot\": {\n                    \"company_id\": 17,\n                    \"user_id\": 18\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Joyalab",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/images/moonton.svg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/company",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Company Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "PT Muda Jaya Digital",
+											"type": "text"
+										},
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/images/moonton-white.svg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/company",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 16:22:59 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 16:22:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Company Created Successfully\"\n    },\n    \"result\": {\n        \"name\": \"PT Muda Jaya Digital\",\n        \"logo\": \"public/logo/TvTFnEjpIvkda1sVCr053V75n95zOjg83gGhE3EC.svg\",\n        \"updated_at\": \"2023-09-05T16:22:59.000000Z\",\n        \"created_at\": \"2023-09-05T16:22:59.000000Z\",\n        \"id\": 16\n    }\n}"
+						},
+						{
+							"name": "Create Company Load User Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "RAPO",
+											"type": "text"
+										},
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/images/moonton.svg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/company",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 16:36:09 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 16:36:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Company Created Successfully\"\n    },\n    \"result\": {\n        \"name\": \"RAPO\",\n        \"logo\": \"public/logo/6Srvhfif7Pw6BFuPsp1Xqg2RpLenmA6R7mPfQt7F.svg\",\n        \"updated_at\": \"2023-09-05T16:36:09.000000Z\",\n        \"created_at\": \"2023-09-05T16:36:09.000000Z\",\n        \"id\": 18,\n        \"users\": [\n            {\n                \"id\": 18,\n                \"name\": \"nurhuda\",\n                \"email\": \"nurhuda@joyalab.com\",\n                \"email_verified_at\": null,\n                \"two_factor_confirmed_at\": null,\n                \"current_team_id\": null,\n                \"profile_photo_path\": null,\n                \"created_at\": \"2023-09-05T15:08:13.000000Z\",\n                \"updated_at\": \"2023-09-05T15:08:13.000000Z\",\n                \"profile_photo_url\": \"https://ui-avatars.com/api/?name=n&color=7F9CF5&background=EBF4FF\",\n                \"pivot\": {\n                    \"company_id\": 18,\n                    \"user_id\": 18\n                }\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Create Company",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/images/moonton-white.svg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/company",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"company"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 16:23:47 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 16:23:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The name field is required.\",\n    \"errors\": {\n        \"name\": [\n            \"The name field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "RAPO",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/images/moonton-white.svg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/company/update/18",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"company",
+								"update",
+								"18"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Company Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "RAPO",
+											"type": "text"
+										},
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/images/moonton-white.svg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/company/update/18",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"company",
+										"update",
+										"18"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 17:08:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Sep 2023 17:08:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Update Company Success\"\n    },\n    \"result\": {\n        \"id\": 18,\n        \"name\": \"RAPO\",\n        \"logo\": \"public/logo/LesJDac0kXkPx2XwvrTCUoT8K8E0X0cwNE4Zp22c.svg\",\n        \"created_at\": \"2023-09-05T09:36:09.000000Z\",\n        \"updated_at\": \"2023-09-05T17:08:36.000000Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "Create Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "finance",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg"
+								},
+								{
+									"key": "company_id",
+									"value": "8",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/team",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"team"
+							],
+							"query": [
+								{
+									"key": "company_id",
+									"value": "8",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Team success example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "finance",
+											"type": "text"
+										},
+										{
+											"key": "icon",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg"
+										},
+										{
+											"key": "company_id",
+											"value": "8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/team",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"team"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "8",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:43:37 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:43:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Team Created Successfully\"\n    },\n    \"result\": {\n        \"name\": \"finance\",\n        \"icon\": \"public/icons/kI84RbQliajgVlWOM1zXRlB9rCh0ozeUXdVUpjnF.svg\",\n        \"company_id\": \"8\",\n        \"updated_at\": \"2023-09-06T13:43:37.000000Z\",\n        \"created_at\": \"2023-09-06T13:43:37.000000Z\",\n        \"id\": 10\n    }\n}"
+						},
+						{
+							"name": "Create Team failed example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "finance",
+											"type": "text"
+										},
+										{
+											"key": "icon",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg"
+										},
+										{
+											"key": "company_id",
+											"value": "8",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/team",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"team"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "8",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:43:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:43:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The company id field is required.\",\n    \"errors\": {\n        \"company_id\": [\n            \"The company id field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Team on Company",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{domain}}/team?company_id=2",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"team"
+							],
+							"query": [
+								{
+									"key": "company_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Team on Company",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{domain}}/team?company_id=2",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"team"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:39:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:39:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Team Found\"\n    },\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"company_id\": 2,\n                \"name\": \"adipisci\",\n                \"icon\": \"https://via.placeholder.com/640x480.png/005566?text=quibusdam\",\n                \"created_at\": \"2023-09-04T11:09:42.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:42.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/team?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/team?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/team?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/team\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Finance",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg"
+								},
+								{
+									"key": "company_id",
+									"value": "8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/team/update/10",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"team",
+								"update",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Team Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Finance",
+											"type": "text"
+										},
+										{
+											"key": "icon",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg"
+										},
+										{
+											"key": "company_id",
+											"value": "8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/team/update/10",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"team",
+										"update",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:45:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:45:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Update Team Success\"\n    },\n    \"result\": {\n        \"id\": 10,\n        \"company_id\": \"8\",\n        \"name\": \"Finance\",\n        \"icon\": \"public/icons/SJzEA4Yipb7h9MmYr3Ai7wI2AQBbieRt0lE7rIr6.svg\",\n        \"created_at\": \"2023-09-06T13:43:37.000000Z\",\n        \"updated_at\": \"2023-09-06T13:45:51.000000Z\",\n        \"deleted_at\": null\n    }\n}"
+						},
+						{
+							"name": "Update Team Error Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Finance",
+											"type": "text"
+										},
+										{
+											"key": "icon",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg"
+										},
+										{
+											"key": "company_id",
+											"value": "8",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/team/update/10",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"team",
+										"update",
+										"10"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:46:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:46:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 500,\n        \"status\": \"error\",\n        \"message\": \"SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'company_id' cannot be null (Connection: mysql, SQL: update `teams` set `company_id` = ?, `icon` = public/icons/UQVEExOZ2rpsYuYLaUnXiOqi7zeT3xDPPHwEZuMA.svg, `teams`.`updated_at` = 2023-09-06 20:46:13 where `id` = 10)\"\n    },\n    \"result\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/team/10",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"team",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Team Success Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/team/10",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"team",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:47:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:47:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Delete Team Success\"\n    },\n    \"result\": {\n        \"id\": 10,\n        \"company_id\": 8,\n        \"name\": \"Finance\",\n        \"icon\": \"public/icons/SJzEA4Yipb7h9MmYr3Ai7wI2AQBbieRt0lE7rIr6.svg\",\n        \"created_at\": \"2023-09-06T13:43:37.000000Z\",\n        \"updated_at\": \"2023-09-06T13:47:19.000000Z\",\n        \"deleted_at\": \"2023-09-06T13:47:19.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Delete Team Error Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/team/10",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"team",
+										"10"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:48:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:48:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 400,\n        \"status\": \"error\",\n        \"message\": \"Team Not Found\"\n    },\n    \"result\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Create Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sujatmoko",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "sujatmokosdad@joyalab.com",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Pria",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "82816381381",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/images/avatar.png"
+								},
+								{
+									"key": "team_id",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "17",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/employee",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"employee"
+							],
+							"query": [
+								{
+									"key": "company_id",
+									"value": "8",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Employee Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Sujatmoko",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "sujatmoko@joyalab.com",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "25",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Pria",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "82816381381",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/images/avatar.png"
+										},
+										{
+											"key": "team_id",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "role_id",
+											"value": "7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/employee",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "8",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:09:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:09:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Employee Created Successfully\"\n    },\n    \"result\": {\n        \"name\": \"Sujatmoko\",\n        \"email\": \"sujatmoko@joyalab.com\",\n        \"gender\": \"Pria\",\n        \"age\": \"25\",\n        \"phone\": \"82816381381\",\n        \"photo\": \"public/photo/eZVLkqEulTmkQTL8y6rwIaXEIC5BWc2h6GpIZHn8.png\",\n        \"team_id\": \"8\",\n        \"role_id\": \"7\",\n        \"updated_at\": \"2023-09-06T17:09:27.000000Z\",\n        \"created_at\": \"2023-09-06T17:09:27.000000Z\",\n        \"id\": 170\n    }\n}"
+						},
+						{
+							"name": "Create Employee Error Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Sujatmoko",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "sujatmokosdad@joyalab.com",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "25",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Pria",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "82816381381",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/images/avatar.png"
+										},
+										{
+											"key": "team_id",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "role_id",
+											"value": "17",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/employee",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "8",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:10:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:10:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The selected role id is invalid.\",\n    \"errors\": {\n        \"role_id\": [\n            \"The selected role id is invalid.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Employee",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{domain}}/employee",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"employee"
+							],
+							"query": [
+								{
+									"key": "team_id",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "role_id",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Employee Success Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{domain}}/employee",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee"
+									],
+									"query": [
+										{
+											"key": "team_id",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:03:46 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:03:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Employee Found\"\n    },\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"Ms. Reyna Bartoletti PhD\",\n                \"email\": \"iolson@example.org\",\n                \"gender\": \"wanita\",\n                \"age\": 45,\n                \"phone\": \"585.758.5364\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/0000bb?text=possimus\",\n                \"team_id\": 5,\n                \"role_id\": 1,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Prof. Stefan Weissnat\",\n                \"email\": \"wdietrich@example.org\",\n                \"gender\": \"wanita\",\n                \"age\": 50,\n                \"phone\": \"+1-270-823-5638\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/0000aa?text=velit\",\n                \"team_id\": 6,\n                \"role_id\": 5,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Abdul Cummings\",\n                \"email\": \"adrian99@example.org\",\n                \"gender\": \"wanita\",\n                \"age\": 28,\n                \"phone\": \"(754) 448-8948\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/0066ff?text=debitis\",\n                \"team_id\": 2,\n                \"role_id\": 2,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Noble Halvorson II\",\n                \"email\": \"roberbrunner@example.org\",\n                \"gender\": \"pria\",\n                \"age\": 39,\n                \"phone\": \"(914) 648-6580\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/004422?text=accusantium\",\n                \"team_id\": 1,\n                \"role_id\": 1,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Dr. Jade Hartmann\",\n                \"email\": \"cschuppe@example.org\",\n                \"gender\": \"wanita\",\n                \"age\": 25,\n                \"phone\": \"+1-562-515-5902\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00ff55?text=facilis\",\n                \"team_id\": 4,\n                \"role_id\": 1,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Prof. Selmer Jacobson\",\n                \"email\": \"kattie.zieme@example.org\",\n                \"gender\": \"pria\",\n                \"age\": 31,\n                \"phone\": \"+1-320-525-2044\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00ff88?text=atque\",\n                \"team_id\": 7,\n                \"role_id\": 3,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Alexander Bergnaum\",\n                \"email\": \"bethany67@example.net\",\n                \"gender\": \"wanita\",\n                \"age\": 32,\n                \"phone\": \"1-781-529-1861\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00ff77?text=eveniet\",\n                \"team_id\": 2,\n                \"role_id\": 3,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Yvette Ankunding\",\n                \"email\": \"maia.tillman@example.net\",\n                \"gender\": \"pria\",\n                \"age\": 49,\n                \"phone\": \"(423) 645-6035\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/006644?text=sapiente\",\n                \"team_id\": 5,\n                \"role_id\": 2,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Jeffrey Pouros Jr.\",\n                \"email\": \"eabbott@example.org\",\n                \"gender\": \"wanita\",\n                \"age\": 25,\n                \"phone\": \"603-323-6743\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00ff22?text=debitis\",\n                \"team_id\": 5,\n                \"role_id\": 1,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 10,\n                \"name\": \"Jaida Corwin\",\n                \"email\": \"kian.stamm@example.com\",\n                \"gender\": \"wanita\",\n                \"age\": 22,\n                \"phone\": \"1-279-868-4710\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/000044?text=saepe\",\n                \"team_id\": 1,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/employee?page=1\",\n        \"from\": 1,\n        \"last_page\": 17,\n        \"last_page_url\": \"http://localhost:8000/api/employee?page=17\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=4\",\n                \"label\": \"4\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=5\",\n                \"label\": \"5\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=6\",\n                \"label\": \"6\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=7\",\n                \"label\": \"7\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=8\",\n                \"label\": \"8\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=9\",\n                \"label\": \"9\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=10\",\n                \"label\": \"10\",\n                \"active\": false\n            },\n            {\n                \"url\": null,\n                \"label\": \"...\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=16\",\n                \"label\": \"16\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=17\",\n                \"label\": \"17\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://localhost:8000/api/employee?page=2\",\n        \"path\": \"http://localhost:8000/api/employee\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 169\n    }\n}"
+						},
+						{
+							"name": "Get Employee by Team ID Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{domain}}/employee?team_id=2",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee"
+									],
+									"query": [
+										{
+											"key": "team_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:04:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:04:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Employee Found\"\n    },\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 3,\n                \"name\": \"Abdul Cummings\",\n                \"email\": \"adrian99@example.org\",\n                \"gender\": \"wanita\",\n                \"age\": 28,\n                \"phone\": \"(754) 448-8948\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/0066ff?text=debitis\",\n                \"team_id\": 2,\n                \"role_id\": 2,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Alexander Bergnaum\",\n                \"email\": \"bethany67@example.net\",\n                \"gender\": \"wanita\",\n                \"age\": 32,\n                \"phone\": \"1-781-529-1861\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00ff77?text=eveniet\",\n                \"team_id\": 2,\n                \"role_id\": 3,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 14,\n                \"name\": \"Weston Wolf\",\n                \"email\": \"obayer@example.org\",\n                \"gender\": \"pria\",\n                \"age\": 54,\n                \"phone\": \"1-303-588-2973\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00eebb?text=architecto\",\n                \"team_id\": 2,\n                \"role_id\": 6,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 17,\n                \"name\": \"Mr. Rogers Powlowski\",\n                \"email\": \"bailee09@example.com\",\n                \"gender\": \"pria\",\n                \"age\": 31,\n                \"phone\": \"(870) 844-1551\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/009922?text=repudiandae\",\n                \"team_id\": 2,\n                \"role_id\": 5,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 20,\n                \"name\": \"Zita Carter DVM\",\n                \"email\": \"yraynor@example.net\",\n                \"gender\": \"wanita\",\n                \"age\": 45,\n                \"phone\": \"(413) 889-2745\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/000055?text=non\",\n                \"team_id\": 2,\n                \"role_id\": 2,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 34,\n                \"name\": \"Alf Bins\",\n                \"email\": \"gbuckridge@example.org\",\n                \"gender\": \"wanita\",\n                \"age\": 36,\n                \"phone\": \"(234) 215-7577\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/004444?text=sed\",\n                \"team_id\": 2,\n                \"role_id\": 3,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 37,\n                \"name\": \"Shania Kling\",\n                \"email\": \"dare.anthony@example.net\",\n                \"gender\": \"wanita\",\n                \"age\": 45,\n                \"phone\": \"+14325957739\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/002211?text=voluptas\",\n                \"team_id\": 2,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 40,\n                \"name\": \"Dulce Hirthe DDS\",\n                \"email\": \"sam80@example.com\",\n                \"gender\": \"pria\",\n                \"age\": 28,\n                \"phone\": \"(724) 977-9929\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/005522?text=dolore\",\n                \"team_id\": 2,\n                \"role_id\": 6,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 44,\n                \"name\": \"Irving Pouros\",\n                \"email\": \"ayost@example.com\",\n                \"gender\": \"pria\",\n                \"age\": 41,\n                \"phone\": \"347-798-2230\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/007733?text=eos\",\n                \"team_id\": 2,\n                \"role_id\": 6,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:45.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:45.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 45,\n                \"name\": \"Prof. Janice Braun DVM\",\n                \"email\": \"trycia49@example.net\",\n                \"gender\": \"wanita\",\n                \"age\": 36,\n                \"phone\": \"+1-509-902-3638\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00aacc?text=explicabo\",\n                \"team_id\": 2,\n                \"role_id\": 5,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:45.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:45.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/employee?page=1\",\n        \"from\": 1,\n        \"last_page\": 3,\n        \"last_page_url\": \"http://localhost:8000/api/employee?page=3\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://localhost:8000/api/employee?page=2\",\n        \"path\": \"http://localhost:8000/api/employee\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 23\n    }\n}"
+						},
+						{
+							"name": "Get All Employee by Role ID success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{domain}}/employee?team_id=2&role_id=4",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee"
+									],
+									"query": [
+										{
+											"key": "team_id",
+											"value": "2"
+										},
+										{
+											"key": "role_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:05:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:05:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Employee Found\"\n    },\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 10,\n                \"name\": \"Jaida Corwin\",\n                \"email\": \"kian.stamm@example.com\",\n                \"gender\": \"wanita\",\n                \"age\": 22,\n                \"phone\": \"1-279-868-4710\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/000044?text=saepe\",\n                \"team_id\": 1,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 12,\n                \"name\": \"Nigel Funk\",\n                \"email\": \"zprice@example.org\",\n                \"gender\": \"pria\",\n                \"age\": 50,\n                \"phone\": \"1-662-978-0422\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00dd33?text=doloribus\",\n                \"team_id\": 6,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 18,\n                \"name\": \"Sadye Barton\",\n                \"email\": \"gmaggio@example.com\",\n                \"gender\": \"wanita\",\n                \"age\": 57,\n                \"phone\": \"1-458-336-6409\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/000011?text=et\",\n                \"team_id\": 5,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 21,\n                \"name\": \"Prof. Leonie Schmeler\",\n                \"email\": \"kmills@example.net\",\n                \"gender\": \"pria\",\n                \"age\": 35,\n                \"phone\": \"270.679.6281\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/002211?text=enim\",\n                \"team_id\": 1,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 26,\n                \"name\": \"Carmelo Lang IV\",\n                \"email\": \"mathilde.pagac@example.net\",\n                \"gender\": \"wanita\",\n                \"age\": 25,\n                \"phone\": \"1-405-395-5984\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00bb55?text=enim\",\n                \"team_id\": 9,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 32,\n                \"name\": \"Marco Skiles\",\n                \"email\": \"npredovic@example.net\",\n                \"gender\": \"wanita\",\n                \"age\": 57,\n                \"phone\": \"667.379.0488\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/0000bb?text=molestias\",\n                \"team_id\": 3,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 36,\n                \"name\": \"Willa Hettinger\",\n                \"email\": \"jefferey.schmeler@example.com\",\n                \"gender\": \"wanita\",\n                \"age\": 47,\n                \"phone\": \"1-786-783-8456\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/002211?text=veritatis\",\n                \"team_id\": 5,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 37,\n                \"name\": \"Shania Kling\",\n                \"email\": \"dare.anthony@example.net\",\n                \"gender\": \"wanita\",\n                \"age\": 45,\n                \"phone\": \"+14325957739\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/002211?text=voluptas\",\n                \"team_id\": 2,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 52,\n                \"name\": \"Dr. Hillard Spinka\",\n                \"email\": \"maggio.kenya@example.com\",\n                \"gender\": \"pria\",\n                \"age\": 35,\n                \"phone\": \"669-985-9522\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00dd00?text=accusantium\",\n                \"team_id\": 2,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:45.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:45.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 69,\n                \"name\": \"Maryam Larkin DVM\",\n                \"email\": \"eusebio85@example.com\",\n                \"gender\": \"pria\",\n                \"age\": 42,\n                \"phone\": \"1-628-685-7207\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/004433?text=at\",\n                \"team_id\": 2,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:46.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:46.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/employee?page=1\",\n        \"from\": 1,\n        \"last_page\": 3,\n        \"last_page_url\": \"http://localhost:8000/api/employee?page=3\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://localhost:8000/api/employee?page=2\",\n        \"path\": \"http://localhost:8000/api/employee\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 29\n    }\n}"
+						},
+						{
+							"name": "Get Employee by Team ID and Role ID success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{domain}}/employee?team_id=2&role_id=4",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee"
+									],
+									"query": [
+										{
+											"key": "team_id",
+											"value": "2"
+										},
+										{
+											"key": "role_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:05:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:05:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Employee Found\"\n    },\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 37,\n                \"name\": \"Shania Kling\",\n                \"email\": \"dare.anthony@example.net\",\n                \"gender\": \"wanita\",\n                \"age\": 45,\n                \"phone\": \"+14325957739\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/002211?text=voluptas\",\n                \"team_id\": 2,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:44.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 52,\n                \"name\": \"Dr. Hillard Spinka\",\n                \"email\": \"maggio.kenya@example.com\",\n                \"gender\": \"pria\",\n                \"age\": 35,\n                \"phone\": \"669-985-9522\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00dd00?text=accusantium\",\n                \"team_id\": 2,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:45.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:45.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 69,\n                \"name\": \"Maryam Larkin DVM\",\n                \"email\": \"eusebio85@example.com\",\n                \"gender\": \"pria\",\n                \"age\": 42,\n                \"phone\": \"1-628-685-7207\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/004433?text=at\",\n                \"team_id\": 2,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:46.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:46.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 121,\n                \"name\": \"Merl Bahringer MD\",\n                \"email\": \"trantow.delta@example.com\",\n                \"gender\": \"wanita\",\n                \"age\": 45,\n                \"phone\": \"+17573433542\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/0099aa?text=velit\",\n                \"team_id\": 2,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:48.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:48.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 145,\n                \"name\": \"Prof. Gillian West\",\n                \"email\": \"nicola.upton@example.net\",\n                \"gender\": \"wanita\",\n                \"age\": 19,\n                \"phone\": \"(708) 557-5675\",\n                \"photo\": \"https://via.placeholder.com/0x480.png/00ee22?text=aperiam\",\n                \"team_id\": 2,\n                \"role_id\": 4,\n                \"is_verified\": 0,\n                \"verified_at\": null,\n                \"created_at\": \"2023-09-04T11:09:49.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:49.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/employee?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/employee?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/employee?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/employee\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 5,\n        \"total\": 5\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sujatmoko",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "sujatmokosdad@joyalab.com",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "25",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Pria",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "82816381381",
+									"type": "text"
+								},
+								{
+									"key": "team_id",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/images/avatar.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/employee/update/169",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"employee",
+								"update",
+								"169"
+							],
+							"query": [
+								{
+									"key": "company_id",
+									"value": "8",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Employee Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Sujatmoko",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "sujatmokosdad@joyalab.com",
+											"type": "text"
+										},
+										{
+											"key": "age",
+											"value": "25",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Pria",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "82816381381",
+											"type": "text"
+										},
+										{
+											"key": "team_id",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "role_id",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/images/avatar.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/employee/update/169",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee",
+										"update",
+										"169"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "8",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:13:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:13:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Update Employee Success\"\n    },\n    \"result\": {\n        \"name\": \"Sujatmoko\",\n        \"email\": \"sujatmokosdad@joyalab.com\",\n        \"gender\": \"Pria\",\n        \"age\": \"25\",\n        \"phone\": \"82816381381\",\n        \"photo\": \"public/photo/A68r6zmnE4J2mSqXU0bQUPuMh3eH7uON7xO44gUd.png\",\n        \"team_id\": \"8\",\n        \"role_id\": \"7\",\n        \"updated_at\": \"2023-09-06T17:13:14.000000Z\",\n        \"created_at\": \"2023-09-06T17:13:14.000000Z\",\n        \"id\": 171\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/employee/10",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"employee",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Employee Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/employee/10",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"employee",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:13:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 17:13:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Delete Employee Success\"\n    },\n    \"result\": {\n        \"id\": 10,\n        \"name\": \"Jaida Corwin\",\n        \"email\": \"kian.stamm@example.com\",\n        \"gender\": \"wanita\",\n        \"age\": 22,\n        \"phone\": \"1-279-868-4710\",\n        \"photo\": \"https://via.placeholder.com/0x480.png/000044?text=saepe\",\n        \"team_id\": 1,\n        \"role_id\": 4,\n        \"is_verified\": 0,\n        \"verified_at\": null,\n        \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n        \"updated_at\": \"2023-09-06T17:13:43.000000Z\",\n        \"deleted_at\": \"2023-09-06T17:13:43.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Create Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Technical Writter",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg",
+									"disabled": true
+								},
+								{
+									"key": "company_id",
+									"value": "12",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/role",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"role"
+							],
+							"query": [
+								{
+									"key": "company_id",
+									"value": "8",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Role Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Technical Writter",
+											"type": "text"
+										},
+										{
+											"key": "icon",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg",
+											"disabled": true
+										},
+										{
+											"key": "company_id",
+											"value": "12",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/role",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"role"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "8",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:59:12 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:59:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Role Created Successfully\"\n    },\n    \"result\": {\n        \"name\": \"Technical Writter\",\n        \"company_id\": \"12\",\n        \"updated_at\": \"2023-09-06T13:59:12.000000Z\",\n        \"created_at\": \"2023-09-06T13:59:12.000000Z\",\n        \"id\": 7\n    }\n}"
+						},
+						{
+							"name": "Create Role Error Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Technical Writter",
+											"type": "text"
+										},
+										{
+											"key": "icon",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg",
+											"disabled": true
+										},
+										{
+											"key": "company_id",
+											"value": "12",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/role",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"role"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "8",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:00:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:00:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The company id field is required.\",\n    \"errors\": {\n        \"company_id\": [\n            \"The company id field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Role on Company",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{domain}}/role?company_id=12&with_responsibilities=1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"role"
+							],
+							"query": [
+								{
+									"key": "company_id",
+									"value": "12"
+								},
+								{
+									"key": "with_responsibilities",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Role on Company Success Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{domain}}/role?company_id=12",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"role"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:55:35 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 13:55:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Role Found\"\n    },\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"company_id\": 12,\n                \"name\": \"General Manager\",\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/role?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/role?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/role?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/role\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						},
+						{
+							"name": "Get Role on Company with responsiibilities success example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{domain}}/role?company_id=12&with_responsibilities=1",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"role"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "12"
+										},
+										{
+											"key": "with_responsibilities",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 15:06:56 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 15:06:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Role Found\"\n    },\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"company_id\": 12,\n                \"name\": \"General Manager\",\n                \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"updated_at\": \"2023-09-04T11:09:43.000000Z\",\n                \"deleted_at\": null,\n                \"responsibilities\": []\n            },\n            {\n                \"id\": 7,\n                \"company_id\": 12,\n                \"name\": \"Tech Writter\",\n                \"created_at\": \"2023-09-06T13:59:12.000000Z\",\n                \"updated_at\": \"2023-09-06T14:01:20.000000Z\",\n                \"deleted_at\": null,\n                \"responsibilities\": [\n                    {\n                        \"id\": 7,\n                        \"role_id\": 7,\n                        \"name\": \"Wrote Tech Documentation\",\n                        \"created_at\": \"2023-09-06T14:47:42.000000Z\",\n                        \"updated_at\": \"2023-09-06T14:52:25.000000Z\",\n                        \"deleted_at\": null\n                    }\n                ]\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/role?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/role?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/role?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/role\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 2,\n        \"total\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tech Writter",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg",
+									"disabled": true
+								},
+								{
+									"key": "company_id",
+									"value": "12",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/role/update/7",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"role",
+								"update",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Role Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Tech Writter",
+											"type": "text"
+										},
+										{
+											"key": "icon",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg",
+											"disabled": true
+										},
+										{
+											"key": "company_id",
+											"value": "12",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/role/update/7",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"role",
+										"update",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:01:20 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:01:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Update Role Success\"\n    },\n    \"result\": {\n        \"id\": 7,\n        \"company_id\": \"12\",\n        \"name\": \"Tech Writter\",\n        \"created_at\": \"2023-09-06T13:59:12.000000Z\",\n        \"updated_at\": \"2023-09-06T14:01:20.000000Z\",\n        \"deleted_at\": null\n    }\n}"
+						},
+						{
+							"name": "Update Role Error Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Tech Writter",
+											"type": "text"
+										},
+										{
+											"key": "icon",
+											"type": "file",
+											"src": "/E:/course/BWA/Full-Stack Laravel React JS Build Streaming Website Like Netflix/Assets/moonton/public/icons/ic_home.svg",
+											"disabled": true
+										},
+										{
+											"key": "company_id",
+											"value": "12",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/role/update/7",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"role",
+										"update",
+										"7"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:01:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:01:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The company id field is required.\",\n    \"errors\": {\n        \"company_id\": [\n            \"The company id field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/role/6",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"role",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Role Success Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/role/6",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"role",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:02:25 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:02:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Delete Role Success\"\n    },\n    \"result\": {\n        \"id\": 6,\n        \"company_id\": 11,\n        \"name\": \"Engine Assembler\",\n        \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n        \"updated_at\": \"2023-09-06T14:02:25.000000Z\",\n        \"deleted_at\": \"2023-09-06T14:02:25.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Delete Role Error Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/role/6",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"role",
+										"6"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:02:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:02:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 400,\n        \"status\": \"error\",\n        \"message\": \"Role Not Found\"\n    },\n    \"result\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Responsibility",
+			"item": [
+				{
+					"name": "Create Responsibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Writes all About Tech",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/responsibility",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"responsibility"
+							],
+							"query": [
+								{
+									"key": "company_id",
+									"value": "8",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Responsibility Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Writes all About Tech",
+											"type": "text"
+										},
+										{
+											"key": "role_id",
+											"value": "7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/responsibility",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"responsibility"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "8",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:47:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:47:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Responsibility Created Successfully\"\n    },\n    \"result\": {\n        \"name\": \"Writes all About Tech\",\n        \"role_id\": \"7\",\n        \"updated_at\": \"2023-09-06T14:47:42.000000Z\",\n        \"created_at\": \"2023-09-06T14:47:42.000000Z\",\n        \"id\": 7\n    }\n}"
+						},
+						{
+							"name": "Create Responsibility Error Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Writes all About Tech",
+											"type": "text"
+										},
+										{
+											"key": "role_id",
+											"value": "7",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/responsibility",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"responsibility"
+									],
+									"query": [
+										{
+											"key": "company_id",
+											"value": "8",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:48:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:48:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The role id field is required.\",\n    \"errors\": {\n        \"role_id\": [\n            \"The role id field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Responsibility of Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/responsibility?role_id=7",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"responsibility"
+							],
+							"query": [
+								{
+									"key": "role_id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Responsibility of Role Success Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{domain}}/responsibility?role_id=7",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"responsibility"
+									],
+									"query": [
+										{
+											"key": "role_id",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:50:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:50:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Responsibility Found\"\n    },\n    \"result\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 7,\n                \"role_id\": 7,\n                \"name\": \"Writes all About Tech\",\n                \"created_at\": \"2023-09-06T14:47:42.000000Z\",\n                \"updated_at\": \"2023-09-06T14:47:42.000000Z\",\n                \"deleted_at\": null\n            },\n            {\n                \"id\": 8,\n                \"role_id\": 7,\n                \"name\": \"Writes all About Tech\",\n                \"created_at\": \"2023-09-06T14:48:32.000000Z\",\n                \"updated_at\": \"2023-09-06T14:48:32.000000Z\",\n                \"deleted_at\": null\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/responsibility?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/responsibility?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/responsibility?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/responsibility\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 2,\n        \"total\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Responsibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Wrote Tech Documentation",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/responsibility/update/7",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"responsibility",
+								"update",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Responsibility Success Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Wrote Tech Documentation",
+											"type": "text"
+										},
+										{
+											"key": "role_id",
+											"value": "7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/responsibility/update/7",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"responsibility",
+										"update",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:52:25 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:52:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Update Responsibility Success\"\n    },\n    \"result\": {\n        \"id\": 7,\n        \"role_id\": \"7\",\n        \"name\": \"Wrote Tech Documentation\",\n        \"created_at\": \"2023-09-06T14:47:42.000000Z\",\n        \"updated_at\": \"2023-09-06T14:52:25.000000Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Responsibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/responsibility/6",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"responsibility",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Responsibility Success Example",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/responsibility/6",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"responsibility",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:53:04 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Sep 2023 14:53:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.4"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Delete Responsibility Success\"\n    },\n    \"result\": {\n        \"id\": 6,\n        \"role_id\": 3,\n        \"name\": \"strategize distributed mindshare\",\n        \"created_at\": \"2023-09-04T11:09:43.000000Z\",\n        \"updated_at\": \"2023-09-06T14:53:04.000000Z\",\n        \"deleted_at\": \"2023-09-06T14:53:04.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
