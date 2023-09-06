@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\API\CompanyController;
+use App\Http\Controllers\API\ResponsibilityController;
+use App\Http\Controllers\API\RoleController;
+use App\Http\Controllers\API\TeamController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,4 +35,28 @@ Route::prefix('company')->middleware(['auth:sanctum'])->name('company.')->group(
     Route::get('', [CompanyController::class, 'index'])->name('index');
     Route::post('', [CompanyController::class, 'create'])->name('create');
     Route::post('update/{id}', [CompanyController::class, 'update'])->name('update');
+});
+
+//team API Route
+Route::prefix('team')->middleware(['auth:sanctum'])->name('team.')->group(function () {
+    Route::get('', [TeamController::class, 'index'])->name('index');
+    Route::post('', [TeamController::class, 'create'])->name('create');
+    Route::post('update/{id}', [TeamController::class, 'update'])->name('update');
+    Route::delete('{id}', [TeamController::class, 'delete'])->name('delete');
+});
+
+//role API Route
+Route::prefix('role')->middleware(['auth:sanctum'])->name('role.')->group(function () {
+    Route::get('', [RoleController::class, 'index'])->name('index');
+    Route::post('', [RoleController::class, 'create'])->name('create');
+    Route::post('update/{id}', [RoleController::class, 'update'])->name('update');
+    Route::delete('{id}', [RoleController::class, 'delete'])->name('delete');
+});
+
+//responsibility API Route
+Route::prefix('responsibility')->middleware(['auth:sanctum'])->name('responsibility.')->group(function () {
+    Route::get('', [ResponsibilityController::class, 'index'])->name('index');
+    Route::post('', [ResponsibilityController::class, 'create'])->name('create');
+    Route::post('update/{id}', [ResponsibilityController::class, 'update'])->name('update');
+    Route::delete('{id}', [ResponsibilityController::class, 'delete'])->name('delete');
 });
